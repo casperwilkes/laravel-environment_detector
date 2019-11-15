@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * Purpose:
+ *  Apply the correct config file to the current environment.
+ * History:
+ *  100919 - Wilkes: Created file
+ * @author Casper Wilkes <casper@casperwilkes.net>
+ * @package CasperWilkes\EnvDetector
+ * @copyright 2019 - casper wilkes
+ * @license MIT
+ */
+
+use Dotenv\Dotenv;
+
+try {
+
+    // Make sure environment detector path exists //
+    if (!realpath(config_path('environment_detector.php'))) {
+        throw new \RuntimeException('Could not locate config file for environment detector. Publish vendor');
+    }
+
+    // Setup the environment //
+    $env = $app->detectEnvironment(function () {
+        // Machine hosts //
+        // [short name => actual name]
+        $host_defs = require config_path('environment_detector.php');
+
+        // Get current machine hostname //
+        $hostname = gethostname();
+
+        // Search for hostname and return short name if found //
+        $host = array_search($hostname, $host_defs, true);
+
+        // Check host exists //
+        if (!$host) {
+            // Default host file //
+            $env = '.env';
+        } else {
+            $env = ".env.{$host}";
+        }
+
+        // Get .env base directory //
+        $env_base = dirname(__DIR__);
+
+        // Setup the environment path //
+        $environment_path = "{$env_base}/{$env}";
+
+        // Check the environment exists //
+        if (file_exists($environment_path)) {
+            // Create new DotEnv instance and load it //
+            $dotenv = Dotenv::create(dirname(__DIR__), $env);
+            // Overload the settings //
+            $dotenv->overload();
+        }
+    });
+} catch (Exception $e) {
+    echo 'Exception occurred while trying to read configuration.';
+    die();
+}

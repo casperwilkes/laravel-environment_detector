@@ -1,0 +1,35 @@
+{
+    "name": "casperwilkes/laravel-environment_detector",
+    "description": "Builds appropriate .env configs, detects current laravel environment, uses corresponding .env",
+    "keywords": [
+        "environment",
+        "detector",
+        "laravel",
+        "multiple",
+        "multiple environments"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Casper Wilkes",
+            "email": "casper@casperwilkes.net",
+            "homepage": "http://casperwilkes.net",
+            "role": "Software Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "EnvDetector\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EnvDetector\\EnvDetectorServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Purpose:
+ *  Apply the correct config file to the current environment.
+ * History:
+ *  100919 - Wilkes: Created file
+ * @author Casper Wilkes <casper@casperwilkes.net>
+ * @package CasperWilkes\EnvDetector
+ * @copyright 2019 - casper wilkes
+ */
+
+return [
+    /**
+     * To set up your environments:
+     * [short_name, hostname]
+     *  - short_name : description of your environment
+     *  - hostname: The actual hostname of your machine
+     */
+    'environments' => [
+        'local' => 'local',
+        'dev' => 'localhost',
+        'qa' => '',
+        'stage' => '',
+        'prod' => '',
+    ],
+
+];

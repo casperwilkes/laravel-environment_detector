@@ -1,0 +1,11 @@
+// Bring in the environment detector //
+$bootstrap = __DIR__ . '/environment_detector.php';
+
+// Make sure bootstrap exists before requiring //
+if (file_exists($bootstrap)) {
+    require $bootstrap;
+}
+
+// Unset our bootstrap path var //
+unset($bootstrap);
+
