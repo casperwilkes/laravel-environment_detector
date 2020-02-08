@@ -5,6 +5,7 @@
  *  Service provider for laravel. Starts the setup process of the environment detector.
  * History:
  *  100919 - Wilkes: Created file
+ *  020620 - Wilkes: Adjusted comments and use statements.
  * @author Casper Wilkes <casper@casperwilkes.net>
  * @package CasperWilkes\EnvDetector
  * @copyright 2019 - casper wilkes
@@ -13,13 +14,12 @@
 
 namespace EnvDetector;
 
-use EnvDetector\Console\Publish;
-use EnvDetector\Console\UnPublish;
+use EnvDetector\Console\{Publish, UnPublish};
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class EnvironmentDetectorServiceProvider
- * @package EnvironmentDetector
+ * Class EnvDetectorServiceProvider
+ * @package EnvDetector
  */
 class EnvDetectorServiceProvider extends ServiceProvider {
 

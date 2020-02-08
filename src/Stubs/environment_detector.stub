@@ -5,6 +5,7 @@
  *  Apply the correct config file to the current environment.
  * History:
  *  100919 - Wilkes: Created file
+ *  020620 - Wilkes: Adjusted $host_defs
  * @author Casper Wilkes <casper@casperwilkes.net>
  * @package CasperWilkes\EnvDetector
  * @copyright 2019 - casper wilkes
@@ -30,7 +31,7 @@ try {
         $hostname = gethostname();
 
         // Search for hostname and return short name if found //
-        $host = array_search($hostname, $host_defs, true);
+        $host = array_search($hostname, $host_defs['environments'], true);
 
         // Check host exists //
         if (!$host) {
