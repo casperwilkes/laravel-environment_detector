@@ -14,7 +14,7 @@
 
 namespace EnvDetector;
 
-use EnvDetector\Console\{Publish, UnPublish};
+use EnvDetector\Commands\{Publish, UnPublish};
 use Illuminate\Support\ServiceProvider;
 
 /**

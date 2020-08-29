@@ -11,7 +11,7 @@
  * @license MIT
  */
 
-namespace EnvDetector\Console;
+namespace EnvDetector\Commands;
 
 use Exception;
 use Illuminate\Console\Command;
