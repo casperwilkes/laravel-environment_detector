@@ -1,6 +1,6 @@
 {
     "name": "casperwilkes/laravel-environment_detector",
-    "description": "Builds appropriate .env configs, detects current laravel environment, uses corresponding .env",
+    "description": "Builds appropriate .env configs, detects current laravel environment, uses corresponding .env. Requires Laravel Framework 5 or 6.",
     "keywords": [
         "environment",
         "detector",
@@ -19,7 +19,12 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/console": "^5.0|^6.0",
+        "illuminate/support": "^5.0|^6.0",
+        "laravel/framework": "^5.0|^6.0"
+    },
     "autoload": {
         "psr-4": {
             "EnvDetector\\": "src/"

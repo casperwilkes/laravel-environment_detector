@@ -7,6 +7,10 @@ This is great for multiple environment setups.
 
 Sometimes you don't want to save your `.env` files to your repository, in that case, add `.env*` to your `.gitignore` file.
 
+## Requirements ##
+
+This package is only available for Laravel Framework versions 5 & 6.
+
 ## Installation ##
 
 There are a couple steps necessary to get the environment detector up and running.
